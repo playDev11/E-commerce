@@ -13,7 +13,7 @@ const Hero = () => {
             LATEST ARRIVALS
           </h1>
           <div className="flex items-center gap-2">
-            <p className="font-semibold text-sm md:text-base">SHOP NOW</p>
+            <p className="font-semibold  text-sm md:text-base">SHOP NOW</p>
             <p className="w-8 md:w-10 h-[3px] bg-[#414141]"></p>
           </div>
         </div>

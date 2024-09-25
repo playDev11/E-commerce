@@ -5,7 +5,9 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      <img src={assets.logo} className="w-36" alt="" />
+      <Link to={'/'}>
+        <img src={assets.logo} className="w-36" alt="" />
+      </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>Home</p>
@@ -47,37 +49,61 @@ const Navbar = () => {
             12
           </p>
         </Link>
-        <img onClick={()=> setVisible(true)}
+        <img
+          onClick={() => setVisible(true)}
           src={assets.menu_icon}
           className="w-5 cursor-pointer sm:hidden"
           alt=""
         />
       </div>
       {/* Sidebar Menu for sm */}
-      <div className={`absolute top-0 right-0 bottom-0 overflow-hidden  bg-white transition-all ${visible ? 'w-full' : "w-0"}`}>
-        <div className='flex flex-col text-gray-600'>
-          <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
-              <img src={assets.dropdown_icon} className='h-4 rotate-180' alt="" />
-              <p>Back</p>
+      <div
+        className={`absolute top-0 right-0 bottom-0 overflow-hidden  bg-white transition-all ${
+          visible ? 'w-full' : 'w-0'
+        }`}
+      >
+        <div className="flex flex-col text-gray-600">
+          <div
+            onClick={() => setVisible(false)}
+            className="flex items-center gap-4 p-3 cursor-pointer"
+          >
+            <img src={assets.dropdown_icon} className="h-4 rotate-180" alt="" />
+            <p>Back</p>
           </div>
           <ul className="flex flex-col gap-5 text-lg text-gray-700">
-        <NavLink onClick={()=> setVisible(false)}  to="/" className="flex flex-col items-center gap-1 py-2 pl-6 border">
-          <p>Home</p>
-          <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden " />
-        </NavLink>
-        <NavLink onClick={()=> setVisible(false)} to="/collection" className="flex flex-col items-center gap-1">
-          <p>Collection</p>
-          <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden" />
-        </NavLink>
-        <NavLink onClick={()=> setVisible(false)} to="/about" className="flex flex-col items-center gap-1">
-          <p>About</p>
-          <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden" />
-        </NavLink>
-        <NavLink onClick={()=> setVisible(false)} to="/contact" className="flex flex-col items-center gap-1">
-          <p>Contact</p>
-          <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden" />
-        </NavLink>
-      </ul>
+            <NavLink
+              onClick={() => setVisible(false)}
+              to="/"
+              className="flex flex-col items-center gap-1 py-2 pl-6 border"
+            >
+              <p>Home</p>
+              <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden " />
+            </NavLink>
+            <NavLink
+              onClick={() => setVisible(false)}
+              to="/collection"
+              className="flex flex-col items-center gap-1"
+            >
+              <p>Collection</p>
+              <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden" />
+            </NavLink>
+            <NavLink
+              onClick={() => setVisible(false)}
+              to="/about"
+              className="flex flex-col items-center gap-1"
+            >
+              <p>About</p>
+              <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden" />
+            </NavLink>
+            <NavLink
+              onClick={() => setVisible(false)}
+              to="/contact"
+              className="flex flex-col items-center gap-1"
+            >
+              <p>Contact</p>
+              <hr className="w-2/3 border-none h-[1.5px] bg-gray-700 hidden" />
+            </NavLink>
+          </ul>
         </div>
       </div>
     </div>

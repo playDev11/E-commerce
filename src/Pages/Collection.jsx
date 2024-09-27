@@ -53,7 +53,9 @@ const Collection = () => {
             <option value="low-high">Sort by: Low-high</option>
             <option value="high-low">Sort by: High-low</option>
           </select>
-
+        </div>
+        <div className='grid grid-cols-2'>
+           
         </div>
 
       </div>

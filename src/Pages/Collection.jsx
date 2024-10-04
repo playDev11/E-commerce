@@ -5,7 +5,7 @@ import Title from '../Components/Title'
 import ProductItem from '../Components/ProductItem'
 
 const Collection = () => {
-  const { products } = useContext(shopContext)
+  const { products, search, showSearch } = useContext(shopContext)
   const [showFilter, setShowFilter] = useState(false)
   const [filterProduct, setFilterProduct] = useState([]) // Full filtered product list
   const [displayProduct, setDisplayProduct] = useState([]) // Displayed product list (limited view)
@@ -31,6 +31,11 @@ const Collection = () => {
 
   const applyFilter = () => {
     let productsCopy = products.slice()
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+      
+    }
+
 
     if (category.length > 0) {
       productsCopy = productsCopy.filter((item) =>
@@ -71,7 +76,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter() // Apply the initial filter logic when products load
-  }, [products, category, subCategory])
+  }, [products, category, subCategory, search, showSearch])
 
   useEffect(() => {
     sortProduct() // Sort the products based on the sort type

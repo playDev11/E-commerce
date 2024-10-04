@@ -8,11 +8,11 @@ const ProductItem = ({ id, image, name, price }) => {
     <Link className="text-gray-700 cursor-pointer" to={`/product/${id}`}>
       <div className="relative overflow-hidden">
         <img
-          className="w-full h-auto transition-transform duration-500 ease-in-out transform hover:scale-110 rounded-2xl"
+          className="w-full h-auto transition-transform duration-500 ease-in-out transform hover:scale-110 rounded-3xl"
           src={image[0]}
           alt=""
         />
-        <div className="absolute inset-0 bg-blue-900 bg-opacity-30 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-500">
+        <div className="absolute inset-0 bg-blue-900 bg-opacity-30 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-3xl">
           <p>{name}</p>
         </div>
       </div>

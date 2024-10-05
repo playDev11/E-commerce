@@ -12,7 +12,10 @@ const [productData, setProductData] = useState(false)
 const fetchProductData = async () =>{
   
 }
-useEffect
+useEffect(() => {
+  
+  
+},[])
   return (
     <div>
         

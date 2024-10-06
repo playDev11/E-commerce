@@ -10,12 +10,15 @@ const {products} = useContext(shopContext)
 const [productData, setProductData] = useState(false)
 
 const fetchProductData = async () =>{
-  
+  const products = ()=>{
+    // const response = await fetch(`https://fakestoreapi.com/products/${product_id}`)
+  }
 }
 useEffect(() => {
+  fetchProductData();
+  },[product_id])
+
   
-  
-},[])
   return (
     <div>
         
